@@ -1,0 +1,5 @@
+{
+    "word_lst_pth": "world_lst_fr.txt",
+    "MIN_LENGTH": 2,
+    "MAX_LENGTH": 10
+}
