@@ -36,7 +36,7 @@ def gen_subs_dict():
 
     substituted_list = word_lst.copy()
 
-    key_file = open(f"d_key/{str(uuid4())[0:8]}.txt", "w", encoding="utf-8")
+    key_file = open(f"d_keys/{str(uuid4())[0:8]}.txt", "w", encoding="utf-8")
 
     for word in substituted_list:
         if (MIN_LENGTH <= len(word) <= MAX_LENGTH):
