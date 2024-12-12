@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import itertools
 import json
 import os
@@ -20,14 +22,13 @@ def creer_fichier_json(mot, permutations, dossier_sortie):
     nom_fichier = mot + '.json'
     chemin_fichier = os.path.join(dossier_sortie, nom_fichier)
     
-    # Préparer le contenu JSON
     data = {
         "permutations": permutations
     }
     
-    # Écrire dans le fichier JSON
     with open(chemin_fichier, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
+
 
 def creer_combinations_separates(mots, dossier_sortie, max_longueur, afficher_interval):
 
@@ -55,7 +56,6 @@ def creer_combinations_separates(mots, dossier_sortie, max_longueur, afficher_in
             else:
                 mots_exclus += 1
         
-        # Afficher le nombre de mots traités à intervalle régulier
         if mots_traite % afficher_interval == 0:
             print(f"{mots_traite}/{total_mots} mots traités...")
 
@@ -63,10 +63,10 @@ def creer_combinations_separates(mots, dossier_sortie, max_longueur, afficher_in
     print(f"Les fichiers JSON ont été sauvegardés dans le répertoire '{dossier_sortie}'.")
 
 def main():
-    fichier_entree = 'd_world_lst_fr.txt'  # Remplacez par le chemin de votre fichier d'entrée
-    dossier_sortie = 'G:/T3/'  # Nom du répertoire de sortie
-    MAX_LONGUEUR = 10  # Définir une longueur maximale pour éviter les permutations trop grandes
-    AFFICHER_INTERVAL = 10000  # Intervalle pour afficher le nombre de mots traités
+    fichier_entree = 'd_word_lst.txt'
+    dossier_sortie = 'G:/T3/'
+    MAX_LONGUEUR = 10
+    AFFICHER_INTERVAL = 5
 
     try:
         mots = lire_dictionnaire(fichier_entree)
@@ -80,5 +80,7 @@ def main():
 
 # if __name__ == "__main__":
 #     main()
+
+
 
 
